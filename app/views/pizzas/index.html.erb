@@ -1,0 +1,25 @@
+<h1>Listing pizzas</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Components</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pizzas.each do |pizza| %>
+  <tr>
+    <td><%= pizza.name %></td>
+    <td><%= pizza.components %></td>
+    <td><%= link_to 'Show', pizza %></td>
+    <td><%= link_to 'Edit', edit_pizza_path(pizza) %></td>
+    <td><%= link_to 'Destroy', pizza, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pizza', new_pizza_path %>
