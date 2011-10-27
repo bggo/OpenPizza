@@ -1,4 +1,6 @@
 T::Application.routes.draw do
+  resources :clients
+
   resources :pizzas
 
   resources :users
