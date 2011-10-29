@@ -435,6 +435,11 @@ hr {
 	width: 300px;
 }
 
+#field { 
+	float: right;
+	width: 300px;
+} 
+
 /**
  * Navigation
  */
