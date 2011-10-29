@@ -55,7 +55,9 @@
 	<!-- Navigation -->
     <nav id="menu" class="clearfix" role="navigation">
         <ul> 
-            <li class="current"><a href="#">Home</a></li>
+           
+           
+            <li class="current"><%= link_to "Home", root_path %></li>
             
             <li>
                 <%= link_to "Clients", clients_path %>
@@ -85,6 +87,15 @@
                     <li><a href="#">Stock</a></li>
                 </ul>
             </li>
+            
+            <li>
+                <a href="about.html"><b>Statistics</b></a>
+                <ul>
+                    <li><a href="#">Top Clients</a></li>
+                    <li><a href="#">Top Pizzas</a></li>
+                    <li><a href="#">Top hours</a></li>
+                </ul>
+            </li>
                     
             <li><a href="contact.html"><b>Settings</b></a></li>
             
@@ -105,9 +116,10 @@
    
    <%= yield %> 
         
-    </div> <!-- #content -->
+        
+  </div> <!-- #content -->
     
-    <aside id="sidebar" role="complementary">
+ <!--     <aside id="sidebar" role="complementary">
     
         <aside class="widget">
             <h3>Go to</h3>
@@ -117,9 +129,9 @@
                 <li><a href="#">Delivering Orders</a></li>
                 <li><a href="#">Clients Wainting</a></li>
             </ul>
-        </aside> <!-- .widget -->
+        </aside> 
     
-    </aside> <!-- #sidebar -->
+    </aside> -->
     
 </div> <!-- #main -->
     
