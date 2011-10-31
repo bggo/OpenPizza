@@ -1,4 +1,23 @@
-<p id="notice"><%= notice %></p>
+<script>
+
+  $(document).ready(function(){
+   setTimeout(function(){
+  $("#messageBox").fadeOut("slow", function () {
+  $("#messageBox").remove();
+      });
+
+}, 2000);
+ });
+</script>
+
+<% if notice %>
+	<p id="messageBox">
+		<a class="spch-bub-inside">
+			<span class="point"></span>  
+			<em><%= notice %></em>
+		</a>
+	</p>
+<% end %>
 
 <p>
   <b>Name:</b>

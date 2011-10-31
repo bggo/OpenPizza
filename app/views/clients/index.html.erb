@@ -1,31 +1,45 @@
-<h1>Listing clients</h1>
+<script>
 
+  $(document).ready(function(){
+   setTimeout(function(){
+  $("#messageBox").fadeOut("slow", function () {
+  $("#messageBox").remove();
+      });
+
+}, 2000);
+ });
+</script>
+
+<h1>Clients</h1>
+
+<% if notice %>
+	<p id="messageBox">
+		<a class="spch-bub-inside">
+			<span class="point"></span>  
+			<em><%= notice %></em>
+		</a>
+	</p>
+<% end %>
 <table>
   <tr>
+    <th>Phone</th>
     <th>Name</th>
-    <th>Address</th>
-    <th>Number</th>
-    <th>Complement</th>
-    <th>Mail</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @clients.each do |client| %>
   <tr>
+     <td><%= client.phone %></td>
     <td><%= client.name %></td>
-    <td><%= client.address %></td>
-    <td><%= client.number %></td>
-    <td><%= client.complement %></td>
-    <td><%= client.mail %></td>
-    <td><%= link_to 'Show', client %></td>
-    <td><%= link_to 'Edit', edit_client_path(client) %></td>
-    <td><%= link_to 'Destroy', client, confirm: 'Are you sure?', method: :destroy %></td>
+    <td><center><%= link_to image_tag("edit.png"), edit_client_path(client) %></center></td>
+    <td><center><%= link_to image_tag("delete.png"), client, confirm: 'Are you sure?', method: :delete %></center></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
+<nav id="menu" class="clearfix" role="navigation">
 <%= link_to 'New Client', new_client_path %>
+</nav>

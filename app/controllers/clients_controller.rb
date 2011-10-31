@@ -73,11 +73,15 @@ class ClientsController < ApplicationController
   # DELETE /clients/1.json
   def destroy
     @client = Client.find(params[:id])
-    @client.destroy
 
-    respond_to do |format|
-      format.html { redirect_to clients_url }
-      format.json { head :ok }
-    end
+	respond_to do |format|
+		if @client.destroy
+			format.html { redirect_to clients_url, notice: 'Client was successfully deleted' }
+			format.json { head :ok }
+		else
+			format.html { redirect_to clients_url, notice: 'Problem: Client NOT deleted !' }
+		end
+	end
+
   end
 end
