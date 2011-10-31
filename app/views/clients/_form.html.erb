@@ -11,32 +11,54 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :number %><br />
-    <%= f.number_field :number %>
-  </div>
-  <div class="field">
-    <%= f.label :complement %><br />
-    <%= f.text_field :complement %>
-  </div>
-  <div class="field">
-    <%= f.label :mail %><br />
-    <%= f.text_field :mail %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
+    <table>
+      <tr>
+        <th>
+             <div class="field">
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+             </div>
+        </th>
+        <th>
+          <div class="field">
+              <%= f.label :phone %>
+                <%= f.text_field :phone %>
+              </div>
+        </th>
+      </tr>
+      <tr>
+            <th>
+                    <div class="field">
+                        <%= f.label :address %>
+                        <%= f.text_field :address %>
+                    </div>
+            </th>
+            <th>
+                    <div class="field">
+                        <%= f.label :number %>
+                        <%= f.number_field :number %>
+                    </div>
+                  <div class="field">
+                    <%= f.label :complement %>
+                    <%= f.text_field :complement %>
+                  </div>
+            </th>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      </tr>
+      <tr>
+        <th>
+           <div class="field">
+                <%= f.label :mail %>
+                <%= f.text_field :mail %>
+            </div>
+        </th>
+      </tr>
+    </table>
+
+    <br>
+
+<nav id="menu" class="clearfix" role="navigation">
+  <%= f.submit %>
+  <%= link_to 'Back', clients_path %>
+</nav>
 <% end %>
