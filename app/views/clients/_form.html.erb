@@ -1,3 +1,14 @@
+<%= javascript_include_tag "jquery.maskedinput" %>
+
+<script type="text/javascript">
+
+jQuery(function($){
+   $(".phone").mask("(99) 9999-9999");
+});
+
+</script>
+
+
 <%= form_for(@client) do |f| %>
   <% if @client.errors.any? %>
     <div id="error_explanation">
@@ -22,7 +33,7 @@
         <th>
           <div class="field">
               <%= f.label :phone %>
-                <%= f.text_field :phone %>
+                <%= f.text_field :phone , :class => 'phone' %>
               </div>
         </th>
       </tr>
